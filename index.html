@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- *wrapper -->
+    <div class="w-screen min-h-screen bg-gradient-to-bl from-[#160628] to-[#56077A] flex justify-center">
+        <!-- *container -->
+        <div class="w-[40%] mt-10">
+
+            <!-- *heading -->
+            <h1 class="text-3xl font-bold text-[#CBC5D1] tracking-wider text-center">PASSWORD GENERATOR</h1>
+
+            <!-- *result div -->
+            <div class="relative w-full h-16 mt-6 shadow-[0_10px_0_0_#58077D] bg-[#160528] rounded-xl flex justify-between">
+                <p id="final-pass" class="text-[#FFE53D] font-bold text-2xl p-5 opacity-50">PASSWORD</p>
+                <!-- !copy button -->
+                <button id="copy-btn" disabled><img src="/images/copy.svg" class="h-8 mr-6"></button>
+                <!-- *popup -->
+                <div id="popup" class="absolute right-0 -top-5 h-6 w-20 bg-[#BC15F4] rounded-xl text-center text-[#FFE53D] hidden">Copied</div>
+            </div>
+
+            <!-- *settings div -->
+            <div class="w-full p-8 mt-6 shadow-[0_10px_0_0_#58077D] bg-[#160528] rounded-xl">
+                <!-- *password length -->
+                <div class="w-full flex justify-between mb-6">
+                    <p class="text-2xl text-white">Password Length</p>
+                    <!-- !length box -->
+                    <p id="len-box" class="text-[#FFE53D] font-bold text-2xl">10</p>
+                </div>
+
+                <!-- *input range -->
+                <input id="slider" type="range" min="1" max="20" class="slider w-full mb-6" >
+
+                <!-- *checkboxes -->
+                <div class="w-full">
+                    <ul>
+                        <li>
+                            <input type="checkbox" name="characterstics" id="upper" checked>
+                            <label for="upper" class="flex items-center">
+                                <img src="/images/checkbox-checked-svgrepo-com (1).svg" class="check h-6 mr-2">
+                                <img src="/images/checkbox-unchecked-svgrepo-com (1).svg" class="uncheck h-6 mr-2">
+                                <p class="mt-1">Include Uppercase Letters</p>
+                            </label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="characterstics" id="lower">
+                            <label for="lower" class="flex items-center">
+                                <img src="/images/checkbox-checked-svgrepo-com (1).svg" class="check h-6 mr-2">
+                                <img src="/images/checkbox-unchecked-svgrepo-com (1).svg" class="uncheck h-6 mr-2">
+                                <p class="mt-1">Include Lowercase Letters</p>
+                            </label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="characterstics" id="number">
+                            <label for="number" class="flex items-center">
+                                <img src="/images/checkbox-checked-svgrepo-com (1).svg" class="check h-6 mr-2">
+                                <img src="/images/checkbox-unchecked-svgrepo-com (1).svg" class="uncheck h-6 mr-2">
+                                <p class="mt-1">Include Numbers</p>
+                            </label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="characterstics" id="symbol">
+                            <label for="symbol" class="flex items-center">
+                                <img src="/images/checkbox-checked-svgrepo-com (1).svg" class="check h-6 mr-2">
+                                <img src="/images/checkbox-unchecked-svgrepo-com (1).svg" class="uncheck h-6 mr-2">
+                                <p class="mt-1">Include Symbols</p>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- *strength -->
+                <div class="w-full flex justify-between mt-6">
+                    <p class="text-white text-2xl">Strength</p>
+                    <div id="str-clr" class="rounded-[50%] bg-white shadow-[0_0_12px_3px_#ffffff] h-6 w-6"></div>
+                </div>
+
+                <!-- *button -->
+                <button onclick="generate()" id="gen-btn" class="w-full p-4 mt-6 shadow-[0_10px_0_0_#FFE53D] bg-[#BC15F4] text-[#FFE53D] font-bold text-2xl rounded-xl">
+                    GENERATE PASSWORD
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

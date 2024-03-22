@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+    --yellow:#FFE53D;
+    --violet:#160528;
+    --violet2:#BC15F4;
+}
+
+
+*{
+    font-family: "League Spartan";
+}
+
+input[type="checkbox"] , .check , .uncheck{
+    display: none;
+} 
+
+input[type="checkbox"]:checked + label .check{
+    display: block;
+} 
+
+input[type="checkbox"]:not(:checked) + label .uncheck{
+    display: block;
+} 
+
+
+label{
+    margin-left: 10px;
+    color: white;
+    font-size: 1.5rem;
+}
+
+
+
+/* *slider styling */
+
+
+.slider {
+    appearance: none;
+    width: 100%;
+    height: 12px;
+    border-radius: 20px;
+    background: #341C4F;
+    background-image: linear-gradient(to right,var(--violet2) 0%, var(--violet2) 50% ,transparent 50%,transparent 100%);
+    outline: none;
+}
+
+
+.slider:focus {
+    outline: none;
+    outline: 3px solid var(--yellow);
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    border-radius: 50%;
+    background-color: var(--yellow);
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+}
+
+.slider::-webkit-slider-thumb:hover {
+    outline: 2px solid var(--yellow);
+    background-color: var(--violet);
+    box-shadow: 0px 0px 25px 5px rgba(255, 229, 61, 0.80);
+}
+
+.slider::-moz-range-thumb {
+    width: 30px;
+    height: 30px;
+    border: 0;
+    border-radius: 50%;
+    background-color: var(--yellow);
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+}
+
+.slider::-moz-range-thumb:hover {
+    outline: 2px solid var(--yellow);
+    background-color: var(--violet);
+    box-shadow: 0px 0px 25px 5px rgba(255, 229, 61, 0.80);
+}
+
+
