@@ -9,7 +9,9 @@ var lower = document.getElementById('lower');
 var number = document.getElementById('number');
 var symbol = document.getElementById('symbol');
 var strength_clr = document.getElementById('str-clr');
+var final_btn = document.getElementById('gen-btn');
 
+final_btn.addEventListener('click',generate);
 // Copy to clipboard functionality
 copy_btn.addEventListener('click', copy_to_clipboard);
 
